@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKC Edition PTY(LTD)- Source of Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="header-main">
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div>
+                        <div class="logo-text">CKC <span>EDITION PTY(LTD)</span></div>
+                        <div class="tagline">SOURCE OF SOLUTIONS</div>
+                    </div>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+        <h1>Reliable IT Support & Custom Software Solutions</h1>
+        <p class="slogan">We keep your business running smoothly with expert IT support and build powerful software tailored to your goals.</p>
+        <div class="btn-container">
+            <a href="#services" class="btn">Explore Our Services</a>
+            <a href="#contact" class="btn btn-outline">Get Expert Assistance</a>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Comprehensive IT solutions tailored to meet your business and personal needs</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="services-tabs">
+            <button class="tab-btn active" data-tab="it-support">IT Support & Maintenance</button>
+            <button class="tab-btn" data-tab="web-design">Web Design & Development</button>
+        </div>
+
+        <!-- IT Support Content -->
+        <div id="it-support" class="services-tab-content active">
+            <div class="services-grid">
+                <!-- Windows & Office Installation -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/windows.jpg') }}" alt="Windows Installation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Windows & Microsoft Office Installation</h3>
+                        <p>Clean installation of Windows OS and Microsoft Office suite with all necessary drivers and updates.</p>
+                        <div class="price">R250 combo</div>
+                        <div class="combo-offer">
+                            <h4><i class="fas fa-star"></i> Special Combo Offer</h4>
+                            <p>Windows + Microsoft Office installation for only <strong>R250</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Microsoft installation & activation -->
+                <div class="service-card">
+                    <div class="service-image">
+                       <img src="{{ url_for('static', filename='Images/Microsoft.jpg') }}" alt="Microsoft Office">
+                    </div>
+                    <div class="service-content">
+                        <h3>Microsoft Office Installation And Activation</h3>
+                        <p>Installation and configuration of Microsoft Office suite including Word, Excel, PowerPoint and Outlook.</p>
+                        <div class="price">R150</div>
+                    </div>
+                </div>
+                
+                <!-- PC Clean Up -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/cleanup&speed.jpg') }}" alt="PC Cleanup">
+                    </div>
+                    <div class="service-content">
+                        <h3>PC Clean-Up & Speed Optimization</h3>
+                        <p>We remove junk files, fix slowdowns, and tune your system for faster, smoother performance.</p>
+                        <div class="price">R200</div>
+                    </div>
+                </div>
+                
+                <!-- RAM & Hardware -->
+                <div class="service-card">
+                    <div class="service-image">
+                       <img src="{{ url_for('static', filename='Images/ram.jpg') }}" alt="RAM Installation">
+                    </div>
+                    <div class="service-content">
+                        <h3>RAM, SSD, HDD & Other Hardware Installation</h3>
+                        <p>Professional installation of RAM and other hardware components to boost your system's performance.</p>
+                        <div class="price">From R250</div>
+                    </div>
+                </div>
+                
+                <!-- PC Diagnostics -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/pcDiagnos.jpg') }}" alt="PC Diagnostics">
+                    </div>
+                    <div class="service-content">
+                        <h3>PC & Laptop Diagnostics</h3>
+                        <p>We identify hardware and software issues, detect errors, and provide solutions to get your device running properly again.</p>
+                        <div class="price">R100</div>
+                    </div>
+                </div>
+                
+              <!-- IT Support Plans -->
+    <div class="service-card">
+            <div class="service-image">
+              <img src="{{ url_for('static', filename='Images/support.jpg') }}" alt="IT Support">
+           </div>
+    <div class="service-content">
+        <h3>Monthly IT Support Plans</h3>
+        <p>Comprehensive monthly support packages for businesses and individuals with regular IT needs.</p>
+        <div class="price"></div>
+
+        <!-- Button -->
+        <button class="see-plans-btn" onclick="openPlans()">See Plans</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="plansModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePlans()">&times;</span>
+        <h2 class="modal-title">Choose Your IT Support Plan</h2>
+
+        <div class="plans-grid">
+            <!-- Basic Plan -->
+            <div class="plan-card">
+                <h3>🎯 Basic Plan</h3>
+                <div class="price">R125/month</div>
+                <ul>
+                    <li>1 On-site visit per month</li>
+                    <li>Free remote support (WhatsApp/AnyDesk)</li>
+                    <li>Antivirus checkup & updates</li>
+                    <li>Basic updates & PC cleanup</li>
+                    <li>Free Microsoft Office activation</li>
+                    <li>Free Software Application installation</li>
+                    <li>Free windows installation</li>
+                    <li>10% discount on any Hardware issues</li>
+                </ul>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="plan-card">
+                <h3>🏢 Standard Plan</h3>
+                <div class="price">R480/month</div>
+                <ul>
+                    <li>2 On-site visits per month</li>
+                    <li>Full system checkups</li>
+                    <li>Printer & Wi-Fi troubleshooting</li>
+                    <li>Network maintenance</li>
+                    <li>Priority support</li>
+                    <li>Free virus removal</li>
+                    <li>25% discount on any Hardware issues</li>
+                </ul>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="plan-card">
+                <h3>🖥 Premium Plan</h3>
+                <div class="price">R750/month</div>
+                <ul>
+                    <li>4 On-site visits</li>
+                    <li>Unlimited remote support</li>
+                    <li>Backup system + monitoring</li>
+                    <li>Email & web support</li>
+                    <li>License tracking & reports</li>
+                    <li>Discounts on upgrades</li>
+                    <li>All IT support services free</li>
+                    <li>80% discount on Hardware issues</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div> <!-- End of IT Support Content -->
+
+        <!-- Web Design Content -->
+        <div id="web-design" class="services-tab-content">
+            <div class="services-grid">
+
+                <!-- Business Websites -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/Websites.jpg') }}" alt="Business Websites">
+                    </div>
+                    <div class="service-content">
+                        <h3>Business & Personal Websites</h3>
+                        <p>Professional website design and development tailored to your specific needs.</p>
+                        <div class="price">From R1200</div>
+                    </div>
+                </div>
+                
+                <!-- E-commerce -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/ecommerce-websites.jpg') }}" alt="E-commerce">
+                    </div>
+                    <div class="service-content">
+                        <h3>E-commerce Sites</h3>
+                        <p>Complete online store solutions with secure payment gateways and product management.</p>
+                        <div class="price">From R5500</div>
+                    </div>
+                </div>
+                
+                <!-- Custom Design -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/custom website design.jpg') }}" alt="Custom Design">
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Website Design</h3>
+                        <p>Bespoke website solutions using HTML, WordPress, or other platforms.</p>
+                        <div class="price">From R1500</div>
+                    </div>
+                </div>
+                
+                <!-- Domain & Hosting -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/setting-up-web-hosting.jpg') }}" alt="Hosting">
+                    </div>
+                    <div class="service-content">
+                        <h3>Domain & Hosting Setup</h3>
+                        <p>Professional assistance with domain registration and hosting setup.</p>
+                        <div class="price">From R500</div>
+                    </div>
+                </div>
+                
+                <!-- Website Maintenance -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{{ url_for('static', filename='Images/website-maintenance.jpg') }}" alt="Maintenance">
+                    </div>
+                    <div class="service-content">
+                        <h3>Website Maintenance & Updates</h3>
+                        <p>Regular updates and security patches to keep your website running smoothly.</p>
+                        <div class="price">From R300/month</div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End of Web Design Content -->
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About CKC Edition</h2>
+                <p>CKC Edition is your trusted partner for comprehensive IT solutions. With years of experience in the technology industry, we provide professional services tailored to meet both personal and business needs.</p>
+                <p>Our mission is to deliver cutting-edge solutions that empower our clients to succeed in the digital world. From software installation to network management, we cover all aspects of IT support.</p>
+                <p>We pride ourselves on our commitment to quality, reliability, and customer satisfaction. When you choose CKC Edition, you're choosing excellence in IT services.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='Images/about-us.jpg') }}" alt="IT Support Services">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Have questions or ready to get started? Reach out to our team for professional IT solutions. We're here to help you with all your technology needs.</p>
+
+                <div class="contact-details">
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>29 Penelope Street, Bedworth Park, Vereeniging</div>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <div>+27 63 859 6132</div>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <div>ckcedition@gmail.com</div>
+                    </div>
+                    <div>
+                        <i class="fas fa-clock"></i>
+                        <div>Monday - Friday: 8am - 6pm<br>Saturday: 9am - 1pm</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--send us a message form-->
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contactForm"  method="POST">
+                   <div class="form-group">
+                   <label for="name">Your Name</label>
+                     <input type="text" id="name" name="name" required>
+                         </div>
+                  <div class="form-group">
+                     <label for="email">Email Address</label>
+                     <input type="email" id="email" name="email" required>
+                    </div>
+                   <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                  </div>
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                      <select id="service" name="service">
+                       <option value="software">Special Combo Offer</option>
+                        <option value="windows">Microsoft Office & Activation</option>
+                          <option value="office">PC Clean-UP & Speed Optimization</option>
+                           <option value="combo">RAM & hardware installation</option>
+                            <option value="ram">PC & Laptop Diagnostics</option>
+                              <option value="diagnostics">Monthly IT Support Plans</option>
+                             <option value="graphic">Business & personal website</option>
+                            <option value="network">E-commerce Sites</option>
+                            <option value="business">Custom website Design</option>
+                         <option value="hosting">Domain & Hosting setup</option>
+                        <option value="maintenance">Website maintenance & Updates</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                <label for="message">Message</label>
+               <textarea id="message" name="message" required></textarea>
+              </div>
+               <button type="submit" class="btn" style="width: 100%; background: var(--primary-dark);" id="submitBtn">
+                 <span id="submitText">Send Message</span>
+               </button>
+              </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-text">CKC <span>EDITION</span></div>
+                <div class="tagline">SOURCE OF SOLUTIONS</div>
+                <p>Professional IT solutions for personal and business needs. We deliver quality services with a focus on customer satisfaction.</p>
+
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>IT Support Services</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Special Combo Offer</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Monthly IT support plans</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Microsoft Office & Activation</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> PC Clean-Up & Speed Optimization</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> RAM & hardware installation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Vereeniging, South Africa</a></li>
+                    <li><a href="tel:+27638596132"><i class="fas fa-phone"></i> +27 63 859 6132/+27 63 938 0985</a></li>
+                    <li><a href="mailto:ckcedition@gmail.com"><i class="fas fa-envelope"></i> ckcedition@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2023 CKC Edition (Pty) Ltd. All Rights Reserved. | SOURCE OF SOLUTIONS
+        </div>
+    </div>
+</footer>
+
+<!-- Popup after sending message -->
+<div class="popup" id="thankYouPopup">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <i class="fas fa-check-circle"></i>
+        <h3>Thank You!</h3>
+        <p>Your message has been sent successfully. We'll get back to you soon.</p>
+        <button class="btn" style="background: var(--primary);" id="closePopupBtn">Continue Browsing</button>
+    </div>
+</div>
+
+<!-- Error Popup -->
+<div class="popup" id="errorPopup">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <i class="fas fa-exclamation-circle" style="color: #e74c3c;"></i>
+        <h3>Error Sending Message</h3>
+        <p id="errorMessage">There was an error sending your message. Please try again later.</p>
+        <button class="btn" style="background: var(--primary);" id="closeErrorPopupBtn">OK</button>
+    </div>
+</div>
+
+ <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+<!-- Fancy Popup -->
+<div id="popupMessage" class="popup">
+    <div class="popup-content">
+        <div class="checkmark">✔</div>
+        <p id="popupText"></p>
+    </div>
+</div>
+
+</body>
+</html>
